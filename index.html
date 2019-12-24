@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+    function validateForm()
+    {
+        var email=$("#name").val();
+        var password=$("#pass").val();
+        var isBlank=isNullorEmpty(email) && isNullorEmpty(password);
+        if(isBlank)
+        return true;
+        else
+        {
+            $("#msg").text("please fill mandatory fields" );
+            return false;
+        }
+        function isNullorEmpty(param)
+        {
+            return (param==null|| param=="") ?false:true
+        }
+
+
+    }
+    </script>
+</head>
+<body>
+   
+    <form action="validate.php" method="POST" onsubmit="return validateForm()";>
+       <span id="msg">
+           
+       </span>
+       
+        <table>
+        <tr>
+            <td>Email</td>
+            <td><input type="text " id="name" name="name"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password " id="pass" name="pass"></td>
+        </tr>
+        <tr>
+           
+            <td><button><input type="submit" id="submit" value="submit"></button></td>
+        </tr>
+     
+   
+ 
+
+      
+
+       
+    </table>
+</form>
+    
+</body>
+</html>
