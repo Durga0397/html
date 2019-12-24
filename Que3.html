@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      table, tr, td {
+            border: 1px solid black;
+        }
+
+    </style>
+    <script>
+       
+        var stuArray = [];
+       
+        function addTotable() {
+            var student= {
+                prn: document.getElementById("prn").value,
+                name: document.getElementById("name").value,
+                percent: document.getElementById("percent").value
+            }
+            
+            stuArray.push(student);
+        
+           
+            var contents = "<table>" //+"<tr>" + "<td>" + PRN + "</td>" + "<td>" +NAME+ "</td>" + "<td>" + PERCENT + "</td>" + "</tr>";
+            var i=0;
+            for(i=0;i<stuArray.length;i++)
+            {
+                contents = contents + "<tr>" + "<td>" + stuArray[i].prn + "</td>" + "<td>" + stuArray[i].name + "</td>" + "<td>" + stuArray[i].percent + "</td>" + "</tr>";
+            }
+            contents = contents +  "</table>";
+            var tableLists = document.getElementById("tableList");
+            tableLists.innerHTML = contents;
+            
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="prn" placeholder="Enter PRN" />
+            </td>
+            <td>
+                <input type="text" id="name" placeholder="Enter Name" />
+            </td>
+            <td>
+                <input type="text" id="percent" placeholder="Enter Percent" />
+            </td>
+            <td>
+                <button onclick="addTotable();" >Add to Table</button>
+            </td>
+        </tr>
+</table>
+    <table>
+           <tr>
+               <td>PRN</td>
+               <td>NAME</td>
+               <td>PERCENT</td>
+           </tr>
+       </table>
+    <div id="tableList">
+       
+
+    </div>
+
+
+</body>
+</html>
